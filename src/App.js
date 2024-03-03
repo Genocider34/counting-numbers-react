@@ -5,7 +5,7 @@ import { useState } from 'react';
 function CountButton({children, onSelect}) {
   return (
     <>
-      <button onClick={onSelect}>{children}</button>
+      <button  onClick={onSelect}>{children}</button>
     </>
   )
 }
@@ -14,28 +14,18 @@ function CountButton({children, onSelect}) {
 
 function App() {
   let [ countNumber, setCountNumber ] = useState(0);
-  let count = 0;
+
 
   function addButton(){
-    setCountNumber(countNumber + (count + 1));
+    setCountNumber(countNumber+1);
   }
 
   function minusButton() {
-    setCountNumber(countNumber + (count - 1));
+    setCountNumber(countNumber-1);
   }
 
   function resetbutton() {
-    count = 0;
-    countNumber = count
-    setCountNumber(countNumber);
-  }
-
-  
-  function genRandomNumber(){
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
-    return [r,g,b];
+    setCountNumber(countNumber=0);
   }
 
   return (
